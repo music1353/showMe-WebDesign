@@ -1,0 +1,29 @@
+.square {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  display: block;
+  position: relative;
+
+  /* animation */
+  animation-name: MoveToRightContinuous; /* 動畫名稱, 與keyframe名稱對應 */
+  animation-duration: 4s; /* 動畫持續時間 */
+  animation-delay: 2s; /* 動畫延遲開始時間 */
+  animation-iteration-count: infinite; /* 動畫次數 */
+  animation-fill-mode: forwards; /* 動畫結束時, 可以停在最後一個影格上 */
+}
+
+/* 在不同間點設定屬性(用%數表示時間點, 裡面的left表示位置 ) */
+@keyframes MoveToRight {
+  0% { left: 0; }
+  25% { left: 20%; }
+  50% {left: 40% }
+  75% { left: 60% }
+  100% { left: 80% }
+}
+
+/* 連續的動畫 => 用from to */
+@keyframes MoveToRightContinuous {
+  from { left: 0; }
+  to { left: 80%; }
+}
